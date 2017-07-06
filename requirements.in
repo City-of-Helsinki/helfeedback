@@ -1,0 +1,7 @@
+Django
+psycopg2
+djangorestframework
+celery
+django-celery
+redis
+requests

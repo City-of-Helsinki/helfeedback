@@ -1,0 +1,7 @@
+-c requirements.txt
+flake8
+ipython
+prequ
+pytest
+pytest-cov
+pytest-django
