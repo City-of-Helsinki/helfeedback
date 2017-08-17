@@ -1,4 +1,4 @@
-[![Build status](https://travis-ci.org/City-of-Helsinki/helfeedback.svg)](https://travis-ci.org/City-of-Helsinki/helfeedback)
+[![Build status](https://travis-ci.org/City-of-Helsinki/helfeedback.svg?branch=master)](https://travis-ci.org/City-of-Helsinki/helfeedback)
 [![codecov](https://codecov.io/gh/City-of-Helsinki/helfeedback/branch/master/graph/badge.svg)](https://codecov.io/gh/City-of-Helsinki/helfeedback)
 [![Requirements](https://requires.io/github/City-of-Helsinki/helfeedback/requirements.svg?branch=master)](https://requires.io/github/City-of-Helsinki/helfeedback/requirements/?branch=master)
 
