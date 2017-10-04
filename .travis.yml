@@ -6,7 +6,7 @@ python:
 cache: pip
 
 install:
-- pip install pytest-cov -r requirements.txt
+- pip install pytest-cov pytest-django flake8 -r requirements.txt
 
 script: pytest --cov=.
 

@@ -7,10 +7,10 @@ import requests
 
 class Feedback(models.Model):
     RATING_CHOICES = (
-        (1,1),
-        (2,2),
-        (3,3),
-        (4,4),
+        (1, 1),
+        (2, 2),
+        (3, 3),
+        (4, 4),
     )
     user_agent = models.TextField(null=True, blank=True, max_length=400,
                                   verbose_name=_('The user agent string of the user\'s browser'))
