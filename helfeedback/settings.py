@@ -74,7 +74,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'helfeedback',
-        'USER': os.environ.get('DATABASE_USER', 'feedback')
+        'USER': os.environ.get('DATABASE_USER', '')
     }
 }
 
