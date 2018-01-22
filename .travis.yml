@@ -8,8 +8,12 @@ cache: pip
 addons:
   postgresql: "9.6"
 
+services:
+  - redis-server
+
 install:
-- pip install pytest-cov pytest-django flake8 -r requirements.txt
+- pip install prequ
+- prequ sync requirements-dev.txt requirements.txt
 
 script: pytest --cov=.
 
