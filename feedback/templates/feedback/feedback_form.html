@@ -1,0 +1,42 @@
+{% extends "minimal.html" %}
+{% load i18n %}
+{% block title %}{{ block.super }} &mdash; {% trans "Give Us Feedback" %}{% endblock title %}
+{% block main %}
+            <div class="feedback-body">
+                    <h4>{% trans "Give Us Feedback" %}</h4>
+                    <hr>
+                <form action="{% url 'feedback-add' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="options" class="control-label">{% trans "How would you rate this service experience?" %}</label>
+                    <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
+                        {% for radio in form.rating %}
+                        <label class="btn btn-secondary w-100">
+                            <input type="radio" name="{{ form.rating.html_name }}" id="{{ radio.id_for_label }}" value="{{ radio.choice_label }}" autocomplete="off" aria-describedby="ratingHelp">{{ radio.choice_label }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                    <small id="ratingHelp" class="form-text text-muted">{% trans "Rate us on the scale of 1 (weak) - 4 (good)" %}</small>
+                    <div class="help-block with-errors">{{ form.errors }}</div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.body.id_for_label }}" class="control-label">{% trans "How would you have us improve?" %}</label>
+                    <textarea class="form-control" rows="3" name="{{ form.body.html_name }}" id="{{ form.body.id_for_label }}" required data-error="{% trans "Please fill this field" %}">{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <hr >
+                <p>{% trans "Should you wish for us to contact you, please leave your contact information" %}</p>
+                <div class="form-group">
+                    <label for="inputFeedbackName" class="control-label">{% trans "Name" %}</label>
+                    <input type="text" class="form-control" name="name" id="inputFeedbackName" placeholder="{% trans "Name" %}">
+                </div>
+                <div class="form-group">
+                    <label for="inputFeedbackEmail" class="control-label">{% trans "Email" %}</label>
+                    <input type="email" class="form-control" name="{{ form.email.html_name }}" id="inputFeedbackEmail" placeholder="{% trans "Email" %}" data-error="{% trans "Please fill in an email address" %}">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <input type="hidden" name="{{ form.url.html_name }}" value="https://linkedevents.hel.ninja/">
+                <button type="submit" class="btn btn-secondary float-right">{% trans "Send" %}</button>
+                </form>
+            </div>
+{% endblock %}
