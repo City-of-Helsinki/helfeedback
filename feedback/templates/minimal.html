@@ -1,3 +1,4 @@
+{% load staticfiles compress %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,16 +6,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
-
-        <link rel="stylesheet" href="assets/feedback-styles.css">
-
+{% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static "feedback-styles.scss" %}">
+{% endcompress %}
     </head>
 
     <body>
 
 
         <main>
-            {{ content }}
+            {% block main %}{% endblock %}
         </main>
 
 
