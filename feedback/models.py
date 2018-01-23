@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import gettext
@@ -29,6 +30,9 @@ class Feedback(models.Model):
 
     class Meta:
         ordering = (('-created_at'),)
+
+    def get_absolute_url(self):
+        return reverse('feedback-detail', kwargs={'pk': self.pk})
 
     def notify(self):
         print('Feedback.notify')

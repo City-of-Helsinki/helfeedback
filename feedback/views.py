@@ -1,5 +1,6 @@
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -32,3 +33,13 @@ class FeedbackView(APIView):
         feedbacks = Feedback.objects.all()
         serializer = FeedbackSerializer(feedbacks, many=True)
         return Response(serializer.data)
+
+class FeedbackCreate(CreateView):
+    model = Feedback
+    fields = ['rating', 'body', 'url', 'email']
+
+class FeedbackUpdate(UpdateView):
+    model = Feedback
+
+class FeedbackDelete(DeleteView):
+    model = Feedback

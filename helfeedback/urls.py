@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 
 # from feedback.api import APIRouter
-from feedback.views import FeedbackView
+from feedback.views import FeedbackView, FeedbackCreate
 
 admin.autodiscover()
 
@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^v1/', include(router.urls)),
     url(r'^v1/', FeedbackView.as_view()),
+    url(r'feedback/add', FeedbackCreate.as_view(), name='feedback-add'),
     url(r'^$', RedirectView.as_view(url='v1/')),
 ]
