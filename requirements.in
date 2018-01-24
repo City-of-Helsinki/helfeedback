@@ -1,7 +1,9 @@
 Django
+django-environ
 psycopg2
 djangorestframework
 celery
 django-celery
 redis
 requests
+raven
