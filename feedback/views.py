@@ -1,4 +1,5 @@
 from django.utils.decorators import method_decorator
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.edit import CreateView
 from rest_framework import serializers, status
@@ -35,6 +36,8 @@ class FeedbackView(APIView):
         return Response(serializer.data)
 
 
+@method_decorator(xframe_options_exempt, name='dispatch')
 class FeedbackCreate(CreateView):
     form_class = FeedbackForm
     model = Feedback
+    success_url = "/thankyou"

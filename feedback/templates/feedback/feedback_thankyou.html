@@ -1,7 +1,9 @@
 {% extends "minimal.html" %}
-{% debug %}
+{% load i18n %}
 {% block main %}
             <div class="feedback-body">
-                    <h4>Kiitos palautteestasi!</h4>
+                    <h4>{% trans "Thank you!" %}</h4>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    <!-- Current language: {{ LANGUAGE_CODE }} -->
             </div>
 {% endblock %}

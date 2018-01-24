@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic.base import RedirectView
 
 # from feedback.api import APIRouter
@@ -32,6 +33,6 @@ urlpatterns = [
     # url(r'^v1/', include(router.urls)),
     url(r'^v1/', FeedbackView.as_view()),
     url(r'add', FeedbackCreate.as_view(), name='feedback-add'),
-    url(r'thankyou', TemplateView.as_view(template_name='feedback/feedback_thankyou.html')),
+    url(r'thankyou', xframe_options_exempt(TemplateView.as_view(template_name='feedback/feedback_thankyou.html'))),
     url(r'^$', RedirectView.as_view(url='v1/')),
 ]

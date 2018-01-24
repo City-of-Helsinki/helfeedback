@@ -1,12 +1,13 @@
 {% extends "minimal.html" %}
+{% load i18n %}
 {% block main %}
             <div class="feedback-body">
-                    <h4>Anna palautetta palvelusta</h4>
+                    <h4>{% trans "Give Us Feedback" %}</h4>
                     <hr>
                 <form action="{% url 'feedback-add' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="options" class="control-label">Kuinka hyvin palvelu vastasi tarpeitasi?</label>
+                    <label for="options" class="control-label">{% trans "How would you rate this service experience?" %}</label>
                     <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
                         {% for radio in form.rating %}
                         <label class="btn btn-secondary w-100">
@@ -14,27 +15,27 @@
                         </label>
                         {% endfor %}
                     </div>
-                    <small id="ratingHelp" class="form-text text-muted">Arvostele asteikolla 1 (heikko) - 4 (hyvä)</small>
+                    <small id="ratingHelp" class="form-text text-muted">{% trans "Rate us on the scale of 1 (weak) - 4 (good)" %}</small>
                     <div class="help-block with-errors">{{ form.errors }}</div>
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.body.id_for_label }}" class="control-label">Mitä voisimme vielä kehittää?</label>
-                    <textarea class="form-control" rows="3" name="{{ form.body.html_name }}" id="{{ form.body.id_for_label }}" required data-error="Täytä tämä kenttä.">{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea>
+                    <label for="{{ form.body.id_for_label }}" class="control-label">{% trans "How would you have us improve?" %}</label>
+                    <textarea class="form-control" rows="3" name="{{ form.body.html_name }}" id="{{ form.body.id_for_label }}" required data-error="{% trans "Please fill this field" %}">{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea>
                     <div class="help-block with-errors"></div>
                 </div>
-                <hr>
-                <p>Voit jättää yhteystietosi jos haluat että otamme yhteyttä koskien palautettasi</p>
+                <hr >
+                <p>{% trans "Should you wish for us to contact you, please leave your contact information" %}</p>
                 <div class="form-group">
-                    <label for="inputFeedbackName" class="control-label">Nimi</label>
-                    <input type="text" class="form-control" name="name" id="inputFeedbackName" placeholder="Nimi">
+                    <label for="inputFeedbackName" class="control-label">{% trans "Name" %}</label>
+                    <input type="text" class="form-control" name="name" id="inputFeedbackName" placeholder="{% trans "Name" %}">
                 </div>
                 <div class="form-group">
-                    <label for="inputFeedbackEmail" class="control-label">Sähköposti</label>
-                    <input type="email" class="form-control" name="{{ form.email.html_name }}" id="inputFeedbackEmail" placeholder="Sähköposti" data-error="Sähköpostiosoite on väärin.">
+                    <label for="inputFeedbackEmail" class="control-label">{% trans "Email" %}</label>
+                    <input type="email" class="form-control" name="{{ form.email.html_name }}" id="inputFeedbackEmail" placeholder="{% trans "Email" %}" data-error="{% trans "Please fill in an email address" %}">
                     <div class="help-block with-errors"></div>
                 </div>
                 <input type="hidden" name="{{ form.url.html_name }}" value="https://linkedevents.hel.ninja/">
-                <button type="submit" class="btn btn-secondary float-right">Lähetä</button>
+                <button type="submit" class="btn btn-secondary float-right">{% trans "Send" %}</button>
                 </form>
             </div>
 {% endblock %}
