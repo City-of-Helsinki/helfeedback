@@ -31,9 +31,6 @@ class Feedback(models.Model):
     class Meta:
         ordering = (('-created_at'),)
 
-    def get_absolute_url(self):
-        return reverse('feedback-detail', kwargs={'pk': self.pk})
-
     def notify(self):
         print('Feedback.notify')
         if not Notifier.objects.exists():
