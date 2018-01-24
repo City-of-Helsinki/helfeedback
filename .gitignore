@@ -103,3 +103,14 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Configuration specific django stuff
+static/
+node_modules/
+
+# settings files specific to helfeedback
+config_dev.env
+local_settings.py
+
+# jetBrains IDEs
+.idea
