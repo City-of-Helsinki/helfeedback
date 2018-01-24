@@ -1,5 +1,6 @@
 {% extends "minimal.html" %}
 {% load i18n %}
+{% block title %}{{ block.super }} &mdash; {% trans "Give Us Feedback" %}{% endblock title %}
 {% block main %}
             <div class="feedback-body">
                     <h4>{% trans "Give Us Feedback" %}</h4>

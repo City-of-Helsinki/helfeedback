@@ -1,11 +1,11 @@
-{% load staticfiles compress %}
+{% load staticfiles compress i18n %}
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{{ page.title }}</title>
+        <title>{% block title %}{% trans "Helsinki feedback" %}{% endblock %}</title>
 {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static "feedback-styles.scss" %}">
 {% endcompress %}

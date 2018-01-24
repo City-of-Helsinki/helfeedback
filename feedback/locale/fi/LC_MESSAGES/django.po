@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 21:30+0200\n"
+"POT-Creation-Date: 2018-01-24 23:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ville Koivunen <ville.koivunen@hel.fi>\n"
 "Language-Team: Finnish <dev@hel.fi>\n"
@@ -18,82 +18,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: feedback/models.py:17
+#: models.py:16
 msgid "The user agent string of the user's browser"
 msgstr "Käyttäjän selaimen user agent"
 
-#: feedback/models.py:19
+#: models.py:18
 msgid "Rating"
 msgstr "Arvostelu"
 
-#: feedback/models.py:20
+#: models.py:19
 msgid "Body"
 msgstr "Palaute"
 
-#: feedback/models.py:21
+#: models.py:20
 msgid "URL of page where feedback was sent from"
 msgstr "URL, jolta palaute lähetettiin"
 
-#: feedback/models.py:22 feedback/models.py:124
-#: feedback/templates/feedback/feedback_form.html:33
-#: feedback/templates/feedback/feedback_form.html:34
+#: models.py:21 models.py:123 templates/feedback/feedback_form.html:34
+#: templates/feedback/feedback_form.html:35
 msgid "Email"
 msgstr "Sähköposti"
 
-#: feedback/models.py:56
+#: models.py:55
 #, python-format
 msgid "Unsupported notifier type: %s"
 msgstr "Epätuettu ilmoitustyyppi: %s"
 
-#: feedback/models.py:88
+#: models.py:87
 #, python-brace-format
 msgid "New feedback received for {url}"
 msgstr "Uusi palaute {url}:ia koskien tullut"
 
-#: feedback/models.py:126
+#: models.py:125
 msgid "User agent"
 msgstr "Selain"
 
-#: feedback/templates/feedback/feedback_form.html:5
+#: templates/feedback/feedback_form.html:3
+#: templates/feedback/feedback_form.html:6
 msgid "Give Us Feedback"
 msgstr "Anna palautetta palvelusta"
 
-#: feedback/templates/feedback/feedback_form.html:10
+#: templates/feedback/feedback_form.html:11
 msgid "How would you rate this service experience?"
 msgstr "Kuinka hyvin palvelu vastasi tarpeitasi?"
 
-#: feedback/templates/feedback/feedback_form.html:18
+#: templates/feedback/feedback_form.html:19
 msgid "Rate us on the scale of 1 (weak) - 4 (good)"
 msgstr "Arvostele asteikolla 1 (heikko) - 4 (hyvä)"
 
-#: feedback/templates/feedback/feedback_form.html:22
+#: templates/feedback/feedback_form.html:23
 msgid "How would you have us improve?"
 msgstr "Mitä voisimme vielä kehittää?"
 
-#: feedback/templates/feedback/feedback_form.html:23
+#: templates/feedback/feedback_form.html:24
 msgid "Please fill this field"
 msgstr "Täytä myös tämä kenttä"
 
-#: feedback/templates/feedback/feedback_form.html:27
+#: templates/feedback/feedback_form.html:28
 msgid ""
 "Should you wish for us to contact you, please leave your contact information"
 msgstr ""
-"Voit jättää yhteystietosi jos haluat että otamme yhteyttä koskien "
+"Voit jättää yhteystietosi, jos haluat että otamme yhteyttä koskien "
 "palautettasi"
 
-#: feedback/templates/feedback/feedback_form.html:29
-#: feedback/templates/feedback/feedback_form.html:30
+#: templates/feedback/feedback_form.html:30
+#: templates/feedback/feedback_form.html:31
 msgid "Name"
 msgstr "Nimi"
 
-#: feedback/templates/feedback/feedback_form.html:34
+#: templates/feedback/feedback_form.html:35
 msgid "Please fill in an email address"
 msgstr "Sähköpostiosoite on väärin."
 
-#: feedback/templates/feedback/feedback_form.html:38
+#: templates/feedback/feedback_form.html:39
 msgid "Send"
 msgstr "Lähetä"
 
-#: feedback/templates/feedback/feedback_thankyou.html:5
+#: templates/feedback/feedback_thankyou.html:3
+#: templates/feedback/feedback_thankyou.html:6
 msgid "Thank you!"
 msgstr "Kiitos palautteestasi!"
+
+#: templates/minimal.html:8
+msgid "Helsinki feedback"
+msgstr "Helsinki&#45;palaute"
