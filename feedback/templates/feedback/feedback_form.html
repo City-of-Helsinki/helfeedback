@@ -3,28 +3,23 @@
             <div class="feedback-body">
                     <h4>Anna palautetta palvelusta</h4>
                     <hr>
+                <form action="{% url 'feedback-add' %}" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="options" class="control-label">Kuinka hyvin palvelu vastasi tarpeitasi?</label>
                     <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
-                      <label class="btn btn-secondary w-100">
-                        <input type="radio" name="options" id="option1" autocomplete="off" aria-describedby="ratingHelp"> 1
-                      </label>
-                      <label class="btn btn-secondary w-100">
-                        <input type="radio" name="options" id="option2" autocomplete="off" aria-describedby="ratingHelp"> 2
-                      </label>
-                      <label class="btn btn-secondary w-100">
-                        <input type="radio" name="options" id="option3" autocomplete="off" aria-describedby="ratingHelp"> 3
-                      </label>
-                      <label class="btn btn-secondary w-100">
-                        <input type="radio" name="options" id="option3" autocomplete="off" aria-describedby="ratingHelp"> 4
-                      </label>
+                        {% for radio in form.rating %}
+                        <label class="btn btn-secondary w-100">
+                            <input type="radio" name="{{ form.rating.html_name }}" id="{{ radio.id_for_label }}" value="{{ radio.choice_label }}" autocomplete="off" aria-describedby="ratingHelp">{{ radio.choice_label }}
+                        </label>
+                        {% endfor %}
                     </div>
                     <small id="ratingHelp" class="form-text text-muted">Arvostele asteikolla 1 (heikko) - 4 (hyvä)</small>
-                    <div class="help-block with-errors"></div>
+                    <div class="help-block with-errors">{{ form.errors }}</div>
                 </div>
                 <div class="form-group">
-                    <label for="inputFeedbackText" class="control-label">Mitä voisimme vielä kehittää?</label>
-                    <textarea class="form-control" rows="3" name="body" id="inputFeedbackText" required data-error="Täytä tämä kenttä."></textarea>
+                    <label for="{{ form.body.id_for_label }}" class="control-label">Mitä voisimme vielä kehittää?</label>
+                    <textarea class="form-control" rows="3" name="{{ form.body.html_name }}" id="{{ form.body.id_for_label }}" required data-error="Täytä tämä kenttä.">{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea>
                     <div class="help-block with-errors"></div>
                 </div>
                 <hr>
@@ -35,13 +30,11 @@
                 </div>
                 <div class="form-group">
                     <label for="inputFeedbackEmail" class="control-label">Sähköposti</label>
-                    <input type="email" class="form-control" name="email" id="inputFeedbackEmail" placeholder="Sähköposti" data-error="Sähköpostiosoite on väärin.">
+                    <input type="email" class="form-control" name="{{ form.email.html_name }}" id="inputFeedbackEmail" placeholder="Sähköposti" data-error="Sähköpostiosoite on väärin.">
                     <div class="help-block with-errors"></div>
                 </div>
-
+                <input type="hidden" name="{{ form.url.html_name }}" value="https://linkedevents.hel.ninja/">
                 <button type="submit" class="btn btn-secondary float-right">Lähetä</button>
+                </form>
             </div>
-
-
-
 {% endblock %}
