@@ -2,9 +2,14 @@
 {% load i18n %}
 {% block title %}{{ block.super }} &mdash; {% trans "Thank you!" %}{% endblock %}
 {% block main %}
-            <div class="feedback-body">
-                    <h4>{% trans "Thank you!" %}</h4>
+            <div class="feedback-body text-center">
+                <div class="jumbotron">
+                    <h3>{% trans "Thank you!" %}</h3>
+                    <p class="lead">{% trans "Thank you for taking time to give us feedback." %}</p>
+                    <button class="btn btn-outline-secondary">{% trans "Close" %}</button>
+                    <!-- TODO: Make close button to send close event to the displaying page -->
                     {% get_current_language as LANGUAGE_CODE %}
                     <!-- Current language: {{ LANGUAGE_CODE }} -->
+                </div>
             </div>
 {% endblock %}
