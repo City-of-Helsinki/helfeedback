@@ -14,5 +14,11 @@ def feedback():
 
 
 @pytest.mark.django_db
-def test_feedback_creation(feedback):
+def test_feedback_model_creation(feedback):
     assert Feedback.objects.count() == 1
+
+
+@pytest.mark.django_db
+def test_posting_to_api_base(client):
+    resp = client.post('/v1/')
+    assert resp.status_code == 400
