@@ -1,0 +1,94 @@
+/*!
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+@import "hel-bootstrap-4/variables-hel";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+//@import "hel-bootstrap-4/variables-6aika";
+@import "bootstrap/scss/mixins";
+//@import "bootstrap/scss/print";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+//@import "bootstrap/scss/images";
+//@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+//@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+//@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group";
+@import "bootstrap/scss/custom-forms";
+//@import "bootstrap/scss/nav";
+//@import "bootstrap/scss/navbar";
+//@import "bootstrap/scss/card";
+//@import "bootstrap/scss/breadcrumb";
+//@import "bootstrap/scss/pagination";
+//@import "bootstrap/scss/badge";
+@import "bootstrap/scss/jumbotron";
+//@import "bootstrap/scss/alert";
+//@import "bootstrap/scss/progress";
+//@import "bootstrap/scss/media";
+//@import "bootstrap/scss/list-group";
+//@import "bootstrap/scss/close";
+//@import "bootstrap/scss/modal";
+//@import "bootstrap/scss/tooltip";
+//@import "bootstrap/scss/popover";
+//@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/utilities";
+
+@import "hel-bootstrap-4/hel-custom-styles";
+
+$brand-light:  $hel-copper;
+$brand-dark:  $hel-tram;
+
+//$brand-light:  map-get($theme-colors, primary);
+//$brand-dark:  map-get($theme-colors, secondary);
+
+    .icon {
+      /* Lets the icon inherit the text color. */
+      fill: currentColor;
+
+      /* Inherit the text’s size too. Also allows sizing
+         the icon by changing its font-size. */
+      width: 1em !important;
+      height: 1em !important;
+
+      /* Nice visual alignment for icons alongside text.
+         (I got a few questions about this and: with most
+         fonts and styles, this works better than just
+         vertical-align:middle. Try it and see what you
+         like best. */
+      vertical-align: -0.1em;
+
+      /* Paths and strokes that overflow the viewBox can
+         show in IE. If you use normalize.css, it already
+         sets this. */
+      overflow: hidden;
+    }
+
+.feedback-body {
+  color: $hel-coat;
+  padding: 12px;
+
+  h1, h2, h3, h4, h5 {
+    color: $hel-coat;
+  }
+
+  hr {
+    border-top: 2px solid $hel-coat;
+  }
+
+  :required {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32.3 30.5'%3E%3Cpath d='M0 14.4l2.2-6.9c5.2 1.8 8.9 3.4 11.3 4.7-.6-5.9-.9-9.9-1-12.2h7.1c-.1 3.2-.5 7.3-1.1 12.1 3.4-1.7 7.2-3.3 11.5-4.7l2.2 6.9C28.1 15.7 24 16.6 20 17c2 1.7 4.8 4.8 8.4 9.2l-5.9 4.1c-1.9-2.6-4.1-6.1-6.7-10.5-2.4 4.6-4.5 8.1-6.3 10.5l-5.8-4.1c3.8-4.7 6.5-7.7 8.1-9.2-4-.7-8-1.6-11.8-2.6' fill='%239fc9eb'/%3E%3C/svg%3E");
+    background-size: 12px 12px;
+    background-position: right 6px top 6px;
+    background-repeat: no-repeat;
+  }
+}
+
