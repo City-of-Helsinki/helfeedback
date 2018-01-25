@@ -11,7 +11,7 @@
                     <label for="options" class="control-label">{% trans "How would you rate this service experience?" %}</label>
                     <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
                         {% for radio in form.rating %}
-                        <label class="btn btn-secondary w-100">
+                        <label class="btn btn-outline-secondary btn-sm w-100">
                             <input type="radio" name="{{ form.rating.html_name }}" id="{{ radio.id_for_label }}" value="{{ radio.choice_label }}" autocomplete="off" aria-describedby="ratingHelp">{{ radio.choice_label }}
                         </label>
                         {% endfor %}
