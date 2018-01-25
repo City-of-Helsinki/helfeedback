@@ -14,7 +14,7 @@
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
 //@import "bootstrap/scss/images";
-@import "bootstrap/scss/code";
+//@import "bootstrap/scss/code";
 @import "bootstrap/scss/grid";
 //@import "bootstrap/scss/tables";
 @import "bootstrap/scss/forms";
@@ -30,7 +30,7 @@
 //@import "bootstrap/scss/breadcrumb";
 //@import "bootstrap/scss/pagination";
 //@import "bootstrap/scss/badge";
-//@import "bootstrap/scss/jumbotron";
+@import "bootstrap/scss/jumbotron";
 //@import "bootstrap/scss/alert";
 //@import "bootstrap/scss/progress";
 //@import "bootstrap/scss/media";
@@ -76,7 +76,7 @@ $brand-dark:  $hel-tram;
   color: $hel-coat;
   padding: 12px;
 
-  h4 {
+  h1, h2, h3, h4, h5 {
     color: $hel-coat;
   }
 
