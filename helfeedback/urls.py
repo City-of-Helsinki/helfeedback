@@ -13,12 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.generic.base import RedirectView
 
 # from feedback.api import APIRouter
-from feedback.views import FeedbackView
+from feedback.views import FeedbackView, FeedbackCreate
+from django.views.generic import TemplateView
 
 admin.autodiscover()
 
@@ -29,5 +31,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^v1/', include(router.urls)),
     url(r'^v1/', FeedbackView.as_view()),
+    url(r'add', FeedbackCreate.as_view(), name='feedback-add'),
+    url(r'thankyou', xframe_options_exempt(TemplateView.as_view(
+        template_name='feedback/feedback_thankyou.html')), name='feedback-thankyou'),
     url(r'^$', RedirectView.as_view(url='v1/')),
 ]

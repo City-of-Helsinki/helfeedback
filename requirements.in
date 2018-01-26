@@ -1,5 +1,7 @@
 Django
+django-compressor
 django-environ
+django-libsass
 psycopg2
 djangorestframework
 celery
