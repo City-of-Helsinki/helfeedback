@@ -101,4 +101,4 @@ msgstr "Kiitos palautteestasi!"
 
 #: templates/minimal.html:8
 msgid "Helsinki feedback"
-msgstr "Helsinki&#45;palaute"
+msgstr "Helsinki-palaute"

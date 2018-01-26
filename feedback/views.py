@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
@@ -40,4 +41,4 @@ class FeedbackView(APIView):
 class FeedbackCreate(CreateView):
     form_class = FeedbackForm
     model = Feedback
-    success_url = "/thankyou"
+    success_url = reverse_lazy('feedback-thankyou')

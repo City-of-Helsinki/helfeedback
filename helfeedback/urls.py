@@ -32,6 +32,7 @@ urlpatterns = [
     # url(r'^v1/', include(router.urls)),
     url(r'^v1/', FeedbackView.as_view()),
     url(r'add', FeedbackCreate.as_view(), name='feedback-add'),
-    url(r'thankyou', xframe_options_exempt(TemplateView.as_view(template_name='feedback/feedback_thankyou.html'))),
+    url(r'thankyou', xframe_options_exempt(TemplateView.as_view(
+        template_name='feedback/feedback_thankyou.html')), name='feedback-thankyou'),
     url(r'^$', RedirectView.as_view(url='v1/')),
 ]
