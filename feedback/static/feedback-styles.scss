@@ -35,7 +35,7 @@
 //@import "bootstrap/scss/progress";
 //@import "bootstrap/scss/media";
 //@import "bootstrap/scss/list-group";
-//@import "bootstrap/scss/close";
+@import "bootstrap/scss/close";
 //@import "bootstrap/scss/modal";
 //@import "bootstrap/scss/tooltip";
 //@import "bootstrap/scss/popover";
@@ -74,9 +74,14 @@ $brand-dark:  $hel-tram;
 
 .feedback-body {
   color: $hel-coat;
-  padding: 12px;
+
+  .close-feedback {
+    font-size: 48px;
+    color: $hel-coat;
+  }
 
   h1, h2, h3, h4, h5 {
+    margin-top: $line-height-base * 2rem;
     color: $hel-coat;
   }
 
